@@ -1,0 +1,9 @@
+@import "./Base.scss";
+
+#layout {
+    min-height: 100vh;
+
+    & > div:nth-child(2) {
+        margin-left: $sidebar-width;
+    }
+}

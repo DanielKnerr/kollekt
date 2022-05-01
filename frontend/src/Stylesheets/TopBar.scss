@@ -1,0 +1,47 @@
+@import "./Base.scss";
+
+.topBar {
+    $rawHeight: 42px;
+    $verticalPadding: 24px;
+    $height: $rawHeight + 2 * $verticalPadding;
+    display: flex;
+    padding: 0px 36px;
+    align-items: flex-start;
+    height: $height;
+    position: sticky;
+    top: 0px;
+    background-color: $background;
+    z-index: 4;
+    width: 100%;
+    box-sizing: border-box;
+
+    & > div:nth-child(1),
+    & > div:nth-child(3) {
+        height: $height;
+        display: flex;
+        align-items: center;
+    }
+
+    & > div:nth-child(1) > img:nth-child(1) {
+        width: 140px;
+    }
+
+    & > div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        margin-top: $verticalPadding;
+    }
+
+    & > div:nth-child(3) {
+        justify-content: flex-end;
+        font-size: 20px;
+        color: $font-color--light-3;
+        cursor: pointer;
+    }
+
+    & > div:nth-child(3):hover {
+        color: $font-color--light-2;
+    }
+}

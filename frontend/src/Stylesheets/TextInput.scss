@@ -1,0 +1,92 @@
+@import "./Base.scss";
+
+.textInput {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+
+    & > span {
+        font-size: 12px;
+        font-weight: 500;
+        margin-left: 8px;
+        margin-bottom: 4px;
+    }
+
+    & > div {
+        border: 1px solid rgb(179, 179, 179);
+        border-radius: 6px;
+        width: 400px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        margin: 1px;
+        transition: border-color 0.2s background-color 0.1s;
+
+        & > input {
+            font-size: 16px;
+            border: none;
+            padding: 10px 14px;
+            flex: 1;
+            background-color: transparent;
+        }
+
+        & > input:focus {
+            outline: none;
+        }
+
+        & > svg {
+            margin-right: 12px;
+        }
+    }
+}
+
+.textInput--focused {
+    & > div {
+        border-width: 2px;
+        margin: 0px 0px;
+    }
+}
+
+@mixin textInputStyle($name, $border-color, $text-color, $hover-background-color, $hover-text-color, $focus-color) {
+    .textInput#{$name} {
+        & > span {
+            color: $text-color;
+        }
+
+        & > div {
+            border-color: $border-color;
+        }
+
+        & > div > svg {
+            color: $text-color;
+            font-size: 18px;
+        }
+    }
+
+    .textInput#{$name}:hover {
+        & > span {
+            color: $hover-text-color;
+        }
+
+        & > div {
+            background-color: $hover-background-color;
+        }
+    }
+
+    .textInput#{$name}.textInput--focused {
+        & > span {
+            color: $focus-color;
+        }
+        & > div {
+            border-color: $focus-color;
+        }
+    }
+}
+
+@mixin textInputStyleSimple($name, $accent-color, $hover-background-color) {
+    @include textInputStyle($name, $accent-color, $accent-color, $hover-background-color, $accent-color, $accent-color);
+}
+
+@include textInputStyle("", $font-color--light-3, $font-color--light-2, $font-color--transparent, $font-color--light-1, $brand-color);
+@include textInputStyleSimple(--error, $error-color, $error-color--transparent);
+@include textInputStyleSimple(--valid, $success-color, $success-color--transparent);

@@ -1,0 +1,23 @@
+@import "./Base.scss";
+
+.popupOuter {
+    position: fixed;
+    top: 0px;
+    left: $sidebar-width;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000000aa;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.popup {
+    background-color: $background;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 24px 32px;
+}

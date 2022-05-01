@@ -1,0 +1,33 @@
+@import "./Base.scss";
+
+#labels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    & > .button {
+        margin-top: 32px;
+    }
+
+    .labels__label {
+        background-color: rgb(255, 140, 140);
+        font-size: 18px;
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin: 12px 0px;
+        cursor: pointer;
+    }
+}
+
+#labels__heading {
+    font-size: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+#labels__noLabels {
+    color: $font-color--light-1;
+    font-style: italic;
+}

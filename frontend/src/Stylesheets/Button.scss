@@ -1,0 +1,76 @@
+@import "./Base.scss";
+
+.button {
+    padding: 12px 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    background-color: transparent;
+    transition: background-color 0.1s, transform 0.1s;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button:active {
+    transform: translateY(0px);
+}
+
+.button--large {
+    padding: 18px 56px;
+}
+
+.button--primary {
+    background-color: $brand-color;
+    box-shadow: 0px 2px 12px rgba(2, 55, 160, 0.582);
+    color: white;
+}
+
+.button--smallPrimary:hover,
+.button--primary:hover {
+    background-color: $brand-color--hover;
+}
+
+.button--smallPrimary:active,
+.button--primary:active{
+    background-color: $brand-color--active;
+}
+
+.button--secondary {
+    background-color: $gray-color;
+    color: $font-color;
+}
+
+.button--secondary:hover {
+    background-color: $gray-color--hover;
+}
+
+.button--secondary:active{
+    background-color: $gray-color--active;
+}
+
+.button--text {
+    color: $font-color;
+}
+
+.button--text:hover {
+    background-color: $gray-color;
+}
+
+.button--smallPrimary {
+    color: white;
+    background-color: $brand-color;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.button--smallRed {
+    color: white;
+    background-color: $error-color;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+}

@@ -1,0 +1,41 @@
+@import "./Base.scss";
+
+.createLabelPopup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    --placeholder-color: red;
+
+    & > span {
+        margin-bottom: 12px;
+        color: $font-color--dark-gray;
+    }
+
+    & > input:nth-child(2) {
+        font-size: 28px;
+        width: 300px;
+        font-weight: 300;
+        margin-bottom: 32px;
+        border: 0px;
+        background-color: cadetblue;
+        padding: 8px 12px;
+        border-radius: 4px;
+    }
+
+    & > input:nth-child(2):focus {
+        outline: none;
+    }
+
+    & > input::placeholder {
+        color: var(--placeholder-color);
+        opacity: 1;
+    }
+
+    & > .react-colorful {
+        margin-bottom: 56px;
+    }
+
+    & > div:nth-child(5) > .button {
+        margin: 0px 8px;
+    }
+}

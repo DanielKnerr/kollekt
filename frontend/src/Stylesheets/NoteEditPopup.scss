@@ -1,0 +1,147 @@
+@import "./Base.scss";
+
+.noteEditPopup {
+    width: 600px;
+}
+
+#noteEditPopup__title,
+#noteEditPopup__content {
+    border: none;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border-bottom: 2px solid transparent;
+    transition: background-color 0.2s, border-radius 0.1s, border-color 0.1s;
+}
+
+#noteEditPopup__title:hover,
+#noteEditPopup__content:hover {
+    background-color: $background--light-gray;
+}
+
+#noteEditPopup__title:focus,
+#noteEditPopup__content:focus {
+    background-color: $background--light-gray;
+    border-color: $brand-color;
+    outline: none;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+#noteEditPopup__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    padding: 4px 12px;
+}
+
+#noteEditPopup__content {
+    height: 180px;
+    resize: none;
+    margin-bottom: 24px;
+    font-size: 16px;
+    padding: 8px 12px;
+}
+
+#noteEditPopup__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+
+    & > .button {
+        margin: 0px 8px;
+    }
+
+    #noteEditPopup__buttons__space {
+        flex: 1;
+    }
+}
+
+#noteEditPopup__labels {
+    flex: 1;
+    flex-direction: column;
+
+    & > div:nth-child(1) {
+        margin-left: 8px;
+        padding-bottom: 4px;
+        font-weight: 500;
+        font-size: 16px;
+
+        & > span {
+            padding: 0px 4px;
+            border-bottom: 2px solid black;
+        }
+    }
+
+    & > div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        & > span {
+            font-size: 14px;
+            color: $font-color--dark-gray;
+        }
+    }
+}
+
+.noteEditPopup__label {
+    background-color: cornflowerblue;
+    margin: 4px 8px;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    & > span {
+        margin-right: 8px;
+    }
+
+    & > svg {
+        font-size: 10px;
+    }
+}
+
+#noteEditPopup__labelSelection {
+    margin: 8px;
+    margin-top: 16px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: $background--gray;
+    padding: 8px 4px;
+    border-radius: 4px;
+
+    & > div:nth-child(1) {
+        margin-left: 8px;
+        font-weight: 500;
+        margin-bottom: 8px;
+        font-size: 14px;
+
+        & > span {
+            padding: 0px 4px;
+            border-bottom: 1px solid black;
+        }
+    }
+
+    & > div:nth-child(2) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.noteEditPopup__labelSelection__label {
+    font-size: 14px;
+    margin: 4px 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    & > div:nth-child(1) {
+        background-color: red;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+}

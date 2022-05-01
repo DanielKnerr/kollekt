@@ -1,0 +1,91 @@
+@import "../Base.scss";
+
+.authPage {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > img:nth-child(1) {
+        margin-top: 64px;
+        margin-bottom: 42px;
+        height: 80px;
+    }
+
+    .button {
+        margin-top: 48px;
+        margin-bottom: 48px;
+    }
+
+    .authPageHeading {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .authPageSubtitle {
+        margin-top: 8px;
+        margin-bottom: 24px;
+        color: $font-color--light-1;
+    }
+
+    .authPageInfoBox {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 400px;
+        padding: 8px 14px;
+        box-sizing: border-box;
+
+        & > div:nth-child(1) {
+            & > span:nth-child(1) {
+                font-weight: 500;
+            }
+
+            & > span:nth-child(2) {
+                margin-left: 8px;
+            }
+        }
+
+        & > div:nth-child(2) {
+            width: 100%;
+            height: 6px;
+            margin-top: 12px;
+            background-color: rgb(196, 196, 196);
+            border-radius: 5px;
+
+            & > div {
+                width: 64%;
+                height: 100%;
+                background-color: $brand-color;
+                border-radius: 5px;
+                transition: width 1s;
+            }
+        }
+
+        & > div:nth-child(3) {
+            margin-top: 24px;
+
+            & > div {
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+
+                & > svg {
+                    font-size: 22px;
+                    color: red;
+                    margin-right: 8px;
+                }
+
+            }
+        }
+    }
+
+    .authPageButtons {
+        width: 400px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+    }
+}

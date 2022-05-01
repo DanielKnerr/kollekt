@@ -1,0 +1,21 @@
+{
+  "name": "server_v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "bcrypt": "^5.0.1",
+    "http-request-handler": "1.1.0",
+    "mongodb": "^4.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}

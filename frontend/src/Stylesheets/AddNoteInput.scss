@@ -1,0 +1,187 @@
+@import "./Base.scss";
+
+$closedHeight: 46px;
+$openHeight: 200px;
+$padding: 8px;
+$borderWidth: 2px;
+$animStyle: 0.2s ease-in-out;
+$slowAnimStyle: 0.3s ease-in-out;
+$buttonWidth: 140px;
+$inset: 2px;
+
+.addNoteInput:not(.addNoteInput--open):hover {
+    border: $borderWidth solid $background--darker-gray;
+}
+
+.addNoteInput {
+    height: $closedHeight;
+    padding: $padding;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 650px;
+    background-color: $background--light-gray;
+    padding-right: $closedHeight + $padding / 2;
+    box-sizing: border-box;
+    border-radius: $closedHeight / 2;
+    border: $borderWidth solid transparent;
+    cursor: text;
+    z-index: 2;
+
+    transition: height $animStyle, padding $animStyle, border-color $animStyle, box-shadow $animStyle;
+
+    .addNoteInput__title {
+        height: 0px;
+        padding: 0px 8px;
+        border: none;
+        background-color: transparent;
+        font-size: 18px;
+        font-weight: 500;
+        opacity: 0;
+        transition: height $animStyle, padding $animStyle, margin-bottom $animStyle, opacity $animStyle;
+    }
+
+    .addNoteInput__content {
+        background-color: transparent;
+        border: none;
+        padding: 4px 8px;
+        box-sizing: border-box;
+        flex: 1;
+        resize: none;
+        line-height: 18px;
+        overflow-y: hidden;
+    }
+
+    .addNoteInput__title:focus,
+    .addNoteInput__content:focus {
+        outline: none;
+    }
+
+    .addNoteInput__button {
+        position: absolute;
+        right: $padding / 2 + $inset;
+        bottom: $padding / 2 + $inset;
+        width: $closedHeight - $padding - 2 * $inset - 2 * $borderWidth;
+        display: flex;
+        justify-content: center;
+        transition: width $slowAnimStyle;
+
+        & > button {
+            transition: opacity $slowAnimStyle, width $slowAnimStyle, border-radius $slowAnimStyle, margin-right $slowAnimStyle, transform 0.1s, background-color 0.1s, margin-top $slowAnimStyle;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        & > button:hover {
+            transform: translateY(-1px);
+        }
+
+        & > button:active {
+            transform: translateY(0px);
+        }
+
+        .addNoteInput__button__cancel {
+            width: 0px;
+            padding: 0px;
+            border: none;
+            opacity: 0;
+            display: none;
+            background-color: $background--gray;
+            border-radius: 8px;
+        }
+
+        .addNoteInput__button__cancel:hover {
+            background-color: $background--dark-gray;
+        }
+
+        .addNoteInput__button__cancel:active {
+            background-color: $background--darker-gray;
+        }
+
+        .addNoteInput__button__add {
+            background-color: $brand-color;
+            color: white;
+            box-sizing: border-box;
+            border: none;
+            border-radius: $closedHeight / 2;
+            font-size: 14px;
+            width: $closedHeight - $padding - 2 * $inset - 2 * $borderWidth;
+            height: $closedHeight - $padding - 2 * $inset - 2 * $borderWidth;
+
+            & > span {
+                max-width: 0px;
+                overflow: hidden;
+                opacity: 0;
+                font-weight: 500;
+                transition: max-width $slowAnimStyle, opacity $slowAnimStyle, margin-left $slowAnimStyle;
+            }
+        }
+
+        .addNoteInput__button__add:hover {
+            background-color: $brand-color--hover;
+        }
+
+        .addNoteInput__button__add:active {
+            background-color: $brand-color--active;
+        }
+    }
+}
+
+.addNoteInput--open {
+    height: $openHeight;
+    padding-right: $padding;
+    padding-bottom: $closedHeight;
+    border: $borderWidth solid $brand-color;
+    box-shadow: 0px 2px 8px $brand-color--transparent;
+
+    .addNoteInput__title {
+        height: 20px;
+        padding: 6px 10px;
+        margin-bottom: 8px;
+        opacity: 1;
+    }
+
+    .addNoteInput__content {
+        overflow-y: unset;
+    }
+
+    .addNoteInput__button {
+        .addNoteInput__button__cancel {
+            display: inline;
+            width: 0px;
+            margin-right: 0px;
+        }
+
+        .addNoteInput__button__add {
+            width: $closedHeight - $padding - 2 * $inset - 2 * $borderWidth;
+            margin-top: 0px;
+        }
+    }
+}
+
+.addNoteInput--open-center {
+    .addNoteInput__button {
+        width: 630px;
+
+        .addNoteInput__button__cancel {
+            width: $buttonWidth;
+            opacity: 1;
+            margin-right: 18px;
+        }
+
+        .addNoteInput__button__add {
+            width: $buttonWidth;
+            border-radius: 8px;
+
+            & > span {
+                max-width: 999px;
+                opacity: 1;
+                margin-left: 4px;
+                margin-top: -1px;
+            }
+        }
+    }
+}
